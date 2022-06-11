@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import *
@@ -29,3 +29,16 @@ def signup_view(request):
 
 
             return redirect('welcome')
+        
+   else:
+        form = SignUpForm()
+   return render(request, 'registration/signup.html', {'form': form})
+
+def welcome(request):
+   users = User.objects.exclude(id=request.user.id)
+   profiles=Profile.objects.all()
+   projects=Project.objects.all()
+   project_average=Rate.objects.order_by('-score').first()
+   ratings=Rate.objects.all()
+   
+    
