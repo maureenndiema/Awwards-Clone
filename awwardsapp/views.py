@@ -40,5 +40,29 @@ def welcome(request):
    projects=Project.objects.all()
    project_average=Rate.objects.order_by('-score').first()
    ratings=Rate.objects.all()
+
+   params={
+       'users':users,
+       'profiles':profiles,
+       'projects':projects,
+       'project_average':project_average,
+       'ratings':ratings,
+    }
+   return render(request,'awwards/index.html',params)
+
+@login_required
+def upload_project(request):
+      if request.method=='POST':
+         form=UploadProjectForm(request.POST, request.FILES)
+         if form.is_valid():
+            project=form.save(commit=False)
+            project.user=request.user
+            project.save()
+            return redirect('welcome')
+      else:
+         form=UploadProjectForm()
+      return render(request,'awwards/project.html',{'form':form})
+ 
+
    
     
