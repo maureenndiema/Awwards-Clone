@@ -46,5 +46,14 @@ class Project(models.Model):
     pub_date=models.DateTimeField(auto_now_add=True)
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='project')
     technologies = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    def save_project(self):
+        self.save()
+
+    def delete_project(self):
+        self.delete()
     
 
