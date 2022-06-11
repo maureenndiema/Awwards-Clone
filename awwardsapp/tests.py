@@ -25,3 +25,26 @@ class ProfileTestCase(TestCase):
         profile = User.objects.all()
         self.assertTrue(len(profile) == 0)
 
+class ProjectTestClass(TestCase):
+    def setUp(self):
+        self.user=User(username='alvynah')
+        self.user.save()
+        self.project=Project(title='Test title',description='test description', project_image='test.jpeg', project_url='awwards.com',technologies="django",user=self.user)
+    def tearDown(self):
+        Project.objects.all().delete()
+        User.objects.all().delete()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.project, Project))
+    def test_save_Project(self):
+        self.project.save_project()
+        projects = Project.objects.all()
+        self.assertTrue(len(projects)>0)
+
+    def test_delete_method(self):
+        self.project.save_project()
+        projects = Project.objects.all()
+        self.project.delete_project()
+        projects = Project.objects.all()
+        self.assertTrue(len(projects)==0)
+
