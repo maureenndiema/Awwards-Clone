@@ -70,6 +70,12 @@ class Project(models.Model):
         project=Project.objects.filter(id=id)
         return project
 
+    class Meta:
+        '''
+        Class method to display images by date published
+        '''
+        ordering = ["-pk"]
+
 
     
 
