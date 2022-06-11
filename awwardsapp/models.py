@@ -90,6 +90,32 @@ class Rate(models.Model):
         (10,'10'),
     )
 
+    design =models.IntegerField(choices=RATING_CHOICES,default=0,blank=False)
+    usability =models.IntegerField(choices=RATING_CHOICES,default=0,blank=False)
+    content =models.IntegerField(choices=RATING_CHOICES,default=0,blank=False)
+    average=models.DecimalField(default=0,blank=False,decimal_places=2,max_digits=40)
+    design_average=models.DecimalField(default=0,max_digits=40,decimal_places=2)
+    usability_average=models.DecimalField(default=0,max_digits=40,decimal_places=2)
+    content_average=models.DecimalField(default=0,max_digits=40,decimal_places=2)
+    score=models.DecimalField(default=0,max_digits=40,decimal_places=2)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='rate')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='ratings')
+    rated_at=models.DateTimeField(auto_now_add=True)
+
+    def save_rating(self):
+        self.save()
+    def delete_rating(self):
+        self.delete()
+
+    @classmethod
+    def get_ratings(cls, id):
+        ratings = Rate.objects.filter(post_id=id).all()
+        return ratings
+
+    def __str__(self):
+        return f'{self.project} Rate'
+    
+
 
     
 
