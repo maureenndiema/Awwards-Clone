@@ -62,6 +62,18 @@ def upload_project(request):
       else:
          form=UploadProjectForm()
       return render(request,'awwards/project.html',{'form':form})
+
+@login_required
+def rate_project(request,project_title):
+   project=Project.objects.get(title=project_title)
+   rates=Rate.objects.filter(user=request.user,project=project).first()
+   ratings=Rate.objects.order_by('-rated_at')
+   rates_status=None
+   if rates is None:
+          rates_status = False
+   else:
+          rates_status = True
+
  
 
    
