@@ -32,3 +32,9 @@ class Profile(models.Model):
     def delete_profile(self):
         self.delete()
 
+    @classmethod
+    def search_profile(cls, search_term):
+        return cls.objects.filter(user__username__icontains=search_term).all()
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
