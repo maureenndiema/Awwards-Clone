@@ -24,3 +24,33 @@
 
             </div>
         </form>
+        <a href="/">
+            <h1 class="slogan awwards">Awwards.</h1>
+        </a>
+    </div>
+    {% if user.is_authenticated %}
+    <div>
+        </a>
+        <a href=" {%url 'profile' user.username %}">
+            <img src="{{user.profile.prof_pic.url}}" style="width:50px;height:50px;" alt="none" class="rounded-circle border">
+            <span class="text-muted" style="font-weight:bold;font-size: 20px;">{{user.username}}</span>
+        </a>
+    </div>
+    {%else%}
+    <a href="{%url 'login' %}" class="f-12 font-weight-bold mr-3 ml-auto nav-link text-white-50">REGISTER/LOGIN</a>{%endif%}
+    <a href="{% url 'add_project' %}" class="f-12 font-weight-bold px-4 h-100 btn d-flex align-items-center text-light submitBtn">SUBMIT YOUR SITE!</a>
+
+</div>
+</header>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+
