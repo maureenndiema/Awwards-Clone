@@ -8,3 +8,19 @@
         <a href="/logout">Log Out</a>
         <hr> {%endif%}
     </div>
+    <div id="header-top"></div>
+    <div class="box-left item">
+        <span classpan style="cursor:pointer;font-size:20px;font-weight:bold;" onclick="openNav()">&#9776; Menu</span>
+    </div>
+    <div class="box-center2">
+        <form class="mb-0" id="searchform" action="{% url 'search_results' %}" role="search">
+
+            <div class="input-group">
+
+                <input class="form-control border-right-0  border text-center" type="search" placeholder="search" id="searching" name="search_project">
+                <button class=" bg-transparent btn-sm mt-2 border-left-0 border-top-0" type="submit">
+                        <i class="fa fa-search" style="font-size:20px"></i>
+                    </button>
+
+            </div>
+        </form>
