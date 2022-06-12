@@ -46,3 +46,61 @@
                     <div id="averagemax">{{ project_average.score }}<br>
                         <span class="rates">Average</span>
                     </div>
+                </div>
+                <div class="visitDetails">
+                    <a href="{{project_average.project.project_url}}" target="_blank"><span style="float:left;" class="btn"> Visit Site </span></a>
+                    <span style="float:right;font-size:25px;font-weight:900;">{{project_average.project.ratings.count}} Vote{{ratings.count|pluralize}}</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="container index ">
+        <div class="submission mt-5">
+            <h1>Nominees for Today <i class="fas fa-star"></i><i class="far fa-star"></i><i class="fas fa-star"></i></h1>
+            <hr>
+        </div>
+
+        <div class="cardsIndex">
+            {%for post in projects%}
+            <div class="card mb-4" style="width: 35rem;padding:0;">
+                <div class="card-img projectImage">
+                    <img src="{{post.project_image.url}}" class="card-img1" style="width:100%;height:300px;">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="{% url 'rate' project_title=post.title %}">
+                                <button class="rgba-white-slight btn" style="font-size: 20px;"> Vote</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <span style="font: size 20px;font-weight:800;"><strong>Title: {{post.title|title}}</strong></span>
+                        <span style="float:right"> <a href="{{post.project_url}}" target="_blank"> <i class="fa fa-share" style="color:black;font-size:20px;"></i></a></span>
+
+                    </div>
+                    <p class="text-center"> <strong>Description</strong>:<br>{{post.description}}</p>
+                    <p></p>
+                    <div>
+                        <span><strong>From</strong> :{%if post.user.profile.location%} {{post.user.profile.location|title}} </span> {%else%} Unefined </span>{%endif%}
+                        <span style="float:right;"> <strong>Uploaded On</strong> : {{post.pub_date|date}}</span>
+                    </div>
+                </div>
+                <div class="card-footer" style="background-color:transparent;">
+                    <div>
+                        <a href="{% url 'user_profile' post.user.username  %}">
+                            <img src="{{post.user.profile.prof_pic.url}}" class="rounded-circle border ml-3 mt-2  mr-3" alt="{{prof_pic.user.user.username}}" width="35" height="35">
+                            <span style="color:black;font-weight:bold">By: {{post.user.username|title}}</span>
+                        </a>
+                        <span style="float:right"><strong>Technologies</strong>: {{post.technologies}}</span>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+
+
