@@ -74,7 +74,7 @@ def rate_project(request,project_title):
    else:
           rates_status = True
 
-if request.method == 'POST':
+   if request.method == 'POST':
          form = RateForm(request.POST)
          if form.is_valid():
                rate =form.save(commit=False)
@@ -109,14 +109,6 @@ if request.method == 'POST':
 
                rate.save()
                
-               return HttpResponseRedirect(request.path_info)
-else:
-     form=RateForm()
-params ={
-      'project':project,
-      'rates_status':rates_status,
-      'rating_form':form,
-      'ratings':ratings,
-   }
-   return render(request,'awwards/voteproject.html',params)
+   return HttpResponseRedirect(request.path_info)
 
+   
