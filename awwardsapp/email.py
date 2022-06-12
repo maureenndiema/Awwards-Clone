@@ -6,3 +6,11 @@ def send_welcome_email(name,receiver):
     subject = 'Welcome to the AwwardsClone'
     sender = 'ndiemam@gmail.com'
 
+     #passing in the context vairables
+    text_content = render_to_string('email/awwardsemail.txt',{"name": name})
+    html_content = render_to_string('email/awwardsemail.html',{"name": name})
+
+    msg = EmailMultiAlternatives(subject,text_content,sender,[receiver])
+    msg.attach_alternative(html_content,'text/html')
+    msg.send()
+
