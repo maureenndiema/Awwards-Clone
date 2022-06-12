@@ -18,3 +18,19 @@
         </span>
         </div>
     </div>
+    {% extends 'awwards/base.html' %}
+    {%load crispy_forms_tags%} 
+    {% block content %}{{block.super}}
+    <a href="{% url 'rate' project_title=project_average.project.title%}">
+        <div class="mostRated" style="margin-top:5%;background-image:url({{project_average.project.project_image.url}});">
+            <div class="container mostRatedDetails">
+                <div class="trending">
+                    <br>
+                    <br>
+                    <p style="font-size:25px;"><strong>Highest rated: </strong>{{project_average.rated_at|date}}</p>
+                </div>
+                <div class="details text-center">
+                    <p><span style="font-size :30px;"><strong>{{project_average.project.title|upper}}</strong></span><br> BY <strong>{{project_average.project.user.username|upper}}</strong> FROM <strong>{%if project_average.project.user.profile.location %} {{project_average.project.user.profile.location|upper}}
+                        {%else%} UNDEFINED{%endif%}</strong> WITH {{project_average.score}}</p>
+                </div>
+                
