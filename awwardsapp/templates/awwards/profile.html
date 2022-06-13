@@ -61,7 +61,6 @@
                                 <button type="submit" class="btn btn-primary btn-sm"> Update Profile</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -77,9 +76,34 @@
                             <a href="{% url 'rate' project_title=post.title %}">
                                 <button class="rgba-white-slight btn" style="font-size: 20px;"> Vote</button>
                             </a>
-
                         </div>
-
                     </div>
                 </div>
+                <div class="card-body">
+                    <div>
+                        <span style="font: size 20px;font-weight:800;"><strong>Title: {{post.title|title}}</strong></span>
+                        <span style="float:right"> <a href="{{post.project_url}}" target="_blank"> <i class="fa fa-share"
+                                    style="color:black;font-size:20px;"></i></a></span>
+
+                    </div>
+                    <p class="text-center"> <strong>Description</strong>:<br>{{post.description}}</p>
+                    <p></p>
+                    <div>
+                        <span><strong>From</strong> :{%if post.user.profile.location%} {{post.user.profile.location|title}} </span> {%else%} Unefined </span>{%endif%}
+                        <span style="float:right;"> <strong>Uploaded On</strong> : {{post.pub_date|date}}</span>
+                    </div>
+                </div>
+                <div class="card-footer" style="background-color:transparent;">
+                    <div>
+                        <img src="{{post.user.profile.prof_pic.url}}" class="rounded-circle border ml-3 mt-2  mr-3" alt="{{prof_pic.user.user.username}}" width="35" height="35">
+                        <span style="color:black;font-weight:bold">By: {{post.user.username|title}}</span>
+                        <span style="float:right"><strong>Technologies</strong>: {{post.technologies}}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
 
