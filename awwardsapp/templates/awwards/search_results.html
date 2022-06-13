@@ -1,0 +1,10 @@
+<div id="main">
+
+    {% extends 'awwards/base.html' %} {% load crispy_forms_tags %} {% block content %}
+
+    <div class="container" style="margin-top:8%">
+        {% if results %}
+        <div class="submission text-center">
+            <h5>Found {{results.count}} project{{results.count|pluralize}} of title: {{message}}</h5>
+            <hr>
+        </div>
