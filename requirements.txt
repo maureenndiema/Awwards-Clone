@@ -17,4 +17,5 @@ python-decouple==3.6
 pytz==2022.1
 soupsieve==2.3.2.post1
 sqlparse==0.4.2
+typing-extensions==4.2.0
 whitenoise==6.2.0

@@ -5,9 +5,6 @@ from .forms import *
 from .models import *
 from django.http import HttpResponseRedirect
 from .email import send_welcome_email
-
-
-
 # Create your views here.
 
 def signup_view(request):
