@@ -21,6 +21,22 @@
 
 ## Setup/ Installation
 
+1. To access my repository link: Click here
+
+2. To clone this repository locally, type the following command on your terminal.
+
+If using HTTP keys, type:
+
+ https://github.com/maureenndiema/Awwards-Clone.git
+
+
+If using SSH keys, then type:
+
+ git@github.com:maureenndiema/Awwards-Clone.git
+
+
+3. On running the commands successfully, you should have a local version of this repository. Navigate to the target directory and open it with a prefered IDE :
+
 # Getting the code
 1. clone repository: https://github.com/maureenndiema/Awwards-Clone.git
 2. Move to the folder and install requirements cd Awwards-Clone pip install -r requirements.txt
