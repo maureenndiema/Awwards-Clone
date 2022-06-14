@@ -15,6 +15,9 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap5',
     'rest_framework',
+    'cloudinary',
     
 ]
 
@@ -154,5 +158,11 @@ LOGIN_REDIRECT_URL = 'welcome'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config( 
+  cloud_name = "YOUR_CLOUD_NAME", 
+  api_key = "YOUR_API_KEY", 
+  api_secret = "YOUR_API_SECRET" 
+)
 
 django_heroku.settings(locals())

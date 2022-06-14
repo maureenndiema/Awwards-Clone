@@ -44,15 +44,15 @@ If using SSH keys, then type:
 
 1. Set up Database,and put your username and password in the code
 
-2. Make migrations python3 manage.py makemigrations picture
+2. Make migrations python3 manage.py makemigrations 
 
 3. Migrate python3 manage.py migrate
 
 # Running the Application
-1. Run main apllication
+1. Run main application
    python3 manage.py runserver
 2.  Run tests
-    python3.8 manage.py test picture
+    python3.8 manage.py test 
 
 ## Technologies Used
    

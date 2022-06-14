@@ -129,7 +129,7 @@ table {
 
 #design {
     color: white;
-    border: 3px solid #00C851!important;
+    border: 3px solid #e0b00f!important;
     border-radius: 50%;
     height: 100px;
     width: 150px;
@@ -140,7 +140,7 @@ table {
 
 #usable {
     color: white;
-    border: 3px solid #4285F4!important;
+    border: 3px solid #9e0860!important;
     border-radius: 50%;
     padding: 20px;
     height: 100px;
@@ -150,7 +150,7 @@ table {
 
 #contente {
     color: white;
-    border: 3px solid orange;
+    border: 3px solid rgb(150, 21, 21);
     border-radius: 50%;
     height: 100px;
     width: 150px;
@@ -160,7 +160,7 @@ table {
 
 #averagemax {
     color: white;
-    border: 3px solid #33b5e5;
+    border: 3px solid #17e6b9;
     border-radius: 50%;
     height: 100px;
     width: 150px;
