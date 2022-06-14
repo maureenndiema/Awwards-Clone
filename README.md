@@ -21,7 +21,7 @@
 
 ## Setup/ Installation
 
-1. To access my repository link: Click here
+1. To access my repository link: https://github.com/maureenndiema/Awwards-Clone.git
 
 2. To clone this repository locally, type the following command on your terminal.
 

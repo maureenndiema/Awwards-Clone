@@ -5,6 +5,10 @@ from .forms import *
 from .models import *
 from django.http import HttpResponseRedirect
 from .email import send_welcome_email
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer, ProfileSerializer
+
 # Create your views here.
 
 def signup_view(request):
@@ -208,6 +212,18 @@ def user_profile(request, username):
 
     }
    return render(request, 'awwards/user_profile.html', params)
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_projects = Project.objects.all()
+        serializers = ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data)
+        
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profiles = Profile.objects.all()
+        serializers = ProfileSerializer(all_profiles, many=True)
+        return Response(serializers.data)
  
 
 

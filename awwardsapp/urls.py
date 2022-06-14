@@ -12,7 +12,9 @@ urlpatterns = [
     re_path(r'^search/', views.search_project,name='search_results'),
     path('profile/<username>/', views.profile, name='profile'),
     path('user_profile/<username>/', views.user_profile, name='user_profile'),
-    path('account/', include('django.contrib.auth.urls')),
+    # path('account/', include('django.contrib.auth.urls')),
+    path('api/project/', views.ProjectList.as_view(),name=''),
+    path('api/profile/', views.ProfileList.as_view(),name=''),
      
    
 
