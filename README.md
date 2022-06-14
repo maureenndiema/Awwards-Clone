@@ -8,7 +8,7 @@
 
 ## Live Link
 
-   git clone: https://github.com/maureenndiema/Awwards-Clone.git
+    https://github.com/maureenndiema/Awwards-Clone.git
 
 ## User Stories
 
@@ -22,7 +22,7 @@
 ## Setup/ Installation
 
 # Getting the code
-1. clone repository 
+1. clone repository: https://github.com/maureenndiema/Awwards-Clone.git
 2. Move to the folder and install requirements cd Awwards-Clone pip install -r requirements.txt
 # Database
 
@@ -36,7 +36,7 @@
 1. Run main apllication
    python3 manage.py runserver
 2.  Run tests
-    python3.6 manage.py test picture
+    python3.8 manage.py test picture
 
 ## Technologies Used
    
