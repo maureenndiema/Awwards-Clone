@@ -21,7 +21,7 @@
     {% extends 'awwards/base.html' %}
     {%load crispy_forms_tags%} 
     {% block content %}{{block.super}}
-    <a href="{% url 'rate' project_title=project_average.project.title%}">
+
         <div class="mostRated" style="margin-top:5%;background-image:url({{project_average.project.project_image.url}});">
             <div class="container mostRatedDetails">
                 <div class="trending">
