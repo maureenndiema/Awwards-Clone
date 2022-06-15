@@ -21,7 +21,7 @@ body {
     padding: 20px;
     border-radius: 6px;
     background-color: transparent;
-    box-shadow: 0 0 20px 0 #49c5b6;
+    box-shadow: 0 0 20px 0 #6e4dbb;
     float: center;
     margin-bottom: 2%;
     align-items: center;
@@ -39,15 +39,15 @@ body {
 }
 
 .loginForm input:hover {
-    box-shadow: 0 0 6px 0 #49c5b6;
+    box-shadow: 0 0 6px 0 #6e4dbb;
 }
 
 .loginForm input:focus {
-    box-shadow: 0 0 6px 0 #49c5b6 !important;
+    box-shadow: 0 0 6px 0 #6e4dbb !important;
 }
 
 .loginForm .btn {
-    background-color: #49c5b6;
+    background-color: #6e4dbb;
     padding: 20px !important;
 }
 
@@ -115,7 +115,7 @@ tr {
 }
 
 .table {
-    background-image: url(/static/images/loginwallpaper.jpg);
+    background-image: url(/static/images/loginlandingpic.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -140,7 +140,7 @@ table {
 
 #usable {
     color: white;
-    border: 3px solid #9e0860!important;
+    border: 3px solid #6e4dbb!important;
     border-radius: 50%;
     padding: 20px;
     height: 100px;
@@ -160,7 +160,7 @@ table {
 
 #averagemax {
     color: white;
-    border: 3px solid #17e6b9;
+    border: 3px solid #f35539;
     border-radius: 50%;
     height: 100px;
     width: 150px;
@@ -180,7 +180,7 @@ table {
     padding: 20px;
     border-radius: 6px;
     background-color: transparent;
-    box-shadow: 0 0 20px 0 #49c5b6;
+    box-shadow: 0 0 20px 0 #6e4dbb;
     float: center;
     margin-bottom: 2%;
     align-items: center;
@@ -245,8 +245,9 @@ table {
 }
 
 .visitDetails .btn {
-    background-color: #49c5b6;
+    background-color: #6e4dbb;
     padding: 10px !important;
     border-radius: 4px;
     width: 20%;
 }
+

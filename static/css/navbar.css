@@ -44,6 +44,7 @@
 
 header {
     display: block !important;
+    
 }
 
 #searchform {
@@ -70,6 +71,11 @@ header {
     font-weight: bold !important;
 }
 
+.sloganawwards{
+    color: #6e4dbb;
+
+}
+
 .loginDets {
     float: right;
     padding-right: 23px;
@@ -91,7 +97,7 @@ header {
 }
 
 .submitBtn {
-    background-color: #49c5b6
+    background-color: #6e4dbb;
 }
 
 .helptext {

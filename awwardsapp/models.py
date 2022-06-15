@@ -9,7 +9,7 @@ from cloudinary.models import CloudinaryField
 
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
-    prof_pic= CloudinaryField("Profile Image")
+    prof_pic= CloudinaryField("image", null=True)
     name=models.CharField(max_length=50)
     bio=models.TextField()
     location=models.CharField(max_length=100)
@@ -42,7 +42,7 @@ class Profile(models.Model):
 class Project(models.Model):
     title=models.CharField(max_length=50)
     description=models.TextField()
-    project_image= CloudinaryField(upload_to='projects/')
+    project_image= CloudinaryField('project_image')
     project_url=models.URLField()
     pub_date=models.DateTimeField(auto_now_add=True)
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='project')

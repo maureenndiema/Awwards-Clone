@@ -160,9 +160,9 @@ LOGIN_REDIRECT_URL = 'welcome'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 cloudinary.config( 
-  cloud_name = "YOUR_CLOUD_NAME", 
-  api_key = "YOUR_API_KEY", 
-  api_secret = "YOUR_API_SECRET" 
+  cloud_name = "qwertyyuxcvq", 
+  api_key = "729284528958388", 
+  api_secret = "Q0iTEFaFYMkMCzjvrR4K5dQ1_HY" 
 )
 
 django_heroku.settings(locals())
