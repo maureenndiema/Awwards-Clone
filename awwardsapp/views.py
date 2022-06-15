@@ -23,7 +23,7 @@ def signup_view(request):
             name=form.cleaned_data['username']
             email=form.cleaned_data['email']
             
-            send_welcome_email(name,email)
+            
             user = authenticate(username=username, password=password)
 
             login(request, user)
