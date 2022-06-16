@@ -15,8 +15,7 @@ urlpatterns = [
     # path('account/', include('django.contrib.auth.urls')),
     path('api/project/', views.ProjectList.as_view(),name=''),
     path('api/profile/', views.ProfileList.as_view(),name=''),
-     
-   
+    
 
 
 
